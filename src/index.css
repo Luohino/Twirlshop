@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./assets/fonts/Pacifico.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.glow-text {
+  color: #0066FF;
+  text-shadow: 
+    0 0 5px #0066FF,
+    0 0 10px #0066FF,
+    0 0 15px #0066FF;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #0066FF, #00AAFF, #0080FF, #4A90E2);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Alternative gradient for variety */
+.gradient-text-alt {
+  background: linear-gradient(90deg, #0066FF, #8A2BE2, #0066FF);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 2s ease-in-out infinite;
+}
+
+/* Animated glow for special elements */
+.glow-text-animated {
+  color: #0066FF;
+  text-shadow: 
+    0 0 5px #0066FF,
+    0 0 10px #0066FF,
+    0 0 15px #0066FF,
+    0 0 20px #0066FF,
+    0 0 25px #0066FF;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 
+      0 0 5px #0066FF,
+      0 0 10px #0066FF,
+      0 0 15px #0066FF,
+      0 0 20px #0066FF;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #0066FF,
+      0 0 20px #0066FF,
+      0 0 25px #0066FF,
+      0 0 30px #0066FF,
+      0 0 35px #0066FF;
+  }
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neon-border {
+  border: 1px solid #0066FF;
+  box-shadow: 
+    0 0 5px #0066FF,
+    0 0 10px #0066FF,
+    0 0 15px #0066FF,
+    inset 0 0 5px rgba(0, 102, 255, 0.2);
+}
+
+/* Enhanced button glow */
+.btn-glow {
+  background: linear-gradient(45deg, #0066FF, #0080FF);
+  border: none;
+  box-shadow: 
+    0 0 10px #0066FF,
+    0 0 20px #0066FF,
+    0 0 30px #0066FF;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 
+    0 0 20px #0066FF,
+    0 0 30px #0066FF,
+    0 0 40px #0066FF,
+    0 0 50px #0066FF;
+  transform: translateY(-2px);
+}
+
+/* Card with neon glow effect */
+.card-glow {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(0, 102, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  border-color: rgba(0, 102, 255, 0.6);
+  box-shadow: 
+    0 8px 30px rgba(0, 102, 255, 0.2),
+    0 0 20px rgba(0, 102, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #0066FF, #8A2BE2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #8A2BE2, #FF1493);
+}
